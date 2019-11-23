@@ -9,7 +9,7 @@ public class Goal : MonoBehaviour
     private string gmTag;
     [SerializeField]
     [Header("Fire")]
-    private bool fire;
+    public bool fire;
 
     // Start is called before the first frame update
     void Start()
