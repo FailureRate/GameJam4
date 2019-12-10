@@ -27,6 +27,7 @@ public class Goal : MonoBehaviour
         if (collision.CompareTag(gmTag))
         {
             fire = true;
+            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
