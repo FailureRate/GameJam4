@@ -19,9 +19,9 @@ public class teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (count <=0) { cooldown = false; count = 100; process.SetActive(false); }
-        if (count <= 20) { player.SetActive(true); }
-        if (count >= 1 && cooldown == true) { count--; }
+            if (count <= 0) { cooldown = false; count = 100; process.SetActive(false); }
+            if (count <= 20) { player.SetActive(true); }
+            if (count >= 1 && cooldown == true) { count--; }        
     }
 
     void OnTriggerEnter2D(Collider2D other)
