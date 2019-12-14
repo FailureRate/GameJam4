@@ -9,13 +9,16 @@ public class RigidbodyEvents : MonoBehaviour
      Rigidbody2D rb;
     [SerializeField]
     [Header("BoxCollider2D")]
-    private BoxCollider2D box;
+    private EdgeCollider2D box;
     [SerializeField]
     [Header("ContactNames")]
     private string[] names;
     [SerializeField]
     [Header("Speeds")]
     private float[] speeds;
+    [SerializeField]
+    [Header("Can Water Walk?")]
+    private bool waterWalk = false; 
 
 
     // Start is called before the first frame update
@@ -61,4 +64,5 @@ public class RigidbodyEvents : MonoBehaviour
         }
         return false;
     }
+
 }
