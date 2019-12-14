@@ -1,9 +1,12 @@
-﻿Shader "Unlit/vertshader"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "Unlit/vertshader"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "red" {}
-			_PulseScale("Pulse Scale", Vector) = (1,1,1,1)
+		_Color("Color", Color) = (1,0,0,1)
     }
     SubShader
     {
@@ -37,12 +40,20 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-			float4 _PulseScale;
+			float4 _Color;
 
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex + v.normal * sin(_Time.w * _PulseScale))*5;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+				// Sine Wave Stuff 
+	/*			float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+
+				o.vertex.y += sin(worldPos.x + _Time.w);*/
+				//
+				float range = 0.01f;
+				o.vertex.y += sin(_Time.w) * range;
+
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
@@ -51,7 +62,8 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = _Color;
+				
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
