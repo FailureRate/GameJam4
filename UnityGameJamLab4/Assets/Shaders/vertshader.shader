@@ -51,7 +51,7 @@ Shader "Unlit/vertshader"
 
 				o.vertex.y += sin(worldPos.x + _Time.w);*/
 				//
-				float range = 0.01f;
+				float range = 0.02f;
 				o.vertex.y += sin(_Time.w) * range;
 
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);

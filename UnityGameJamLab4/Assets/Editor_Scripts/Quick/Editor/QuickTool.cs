@@ -68,6 +68,10 @@ public class QuickTool : EditorWindow
                 Object fart = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/Player1.prefab", typeof(GameObject));
                 o = PrefabUtility.InstantiatePrefab(fart) as GameObject;
                 break;
+            case "Player2":
+                Object fart2 = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/Player2.prefab", typeof(GameObject));
+                o = PrefabUtility.InstantiatePrefab(fart2) as GameObject;
+                break;
             default:
                 o = ObjectFactory.CreatePrimitive(PrimitiveType.Cube);
                 break;

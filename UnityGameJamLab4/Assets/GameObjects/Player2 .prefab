@@ -129,6 +129,7 @@ MonoBehaviour:
   - Ground
   - Player1
   speeds: []
+  waterWalk: 1
 --- !u!50 &167821638789763199
 Rigidbody2D:
   serializedVersion: 4
