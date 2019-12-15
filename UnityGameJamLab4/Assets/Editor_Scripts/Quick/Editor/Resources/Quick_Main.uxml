@@ -10,5 +10,9 @@
 		<Instance template="button-template" name="object"/>
     <Instance template="button-template" name="Player1"/>
     <Instance template="button-template" name="Player2"/>
+    <Instance template="button-template" name="Floor"/>
+    <Instance template="button-template" name="Teleporter"/>
+    <Instance template="button-template" name="BlueGoal"/>
+    <Instance template="button-template" name="RedGoal"/>
 	</VisualElement>
 </UXML>

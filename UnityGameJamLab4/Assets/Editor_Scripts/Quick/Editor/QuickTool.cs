@@ -16,12 +16,9 @@ public class QuickTool : EditorWindow
     private void OnEnable()
     {
         VisualElement root = rootVisualElement;
-
         root.styleSheets.Add(Resources.Load<StyleSheet>("Quick_Style"));
-
         VisualTreeAsset tree = Resources.Load<VisualTreeAsset>("Quick_Main");
         tree.CloneTree(root);
-
         UQueryBuilder<Button> buttons = root.Query<Button>();
         buttons.ForEach(SetupButton);
     }
@@ -43,7 +40,7 @@ public class QuickTool : EditorWindow
     private void CreateObject(string type)
     {
         GameObject o;
-
+        Object obj;
         switch (type)
         {
             case "sphere":
@@ -65,12 +62,28 @@ public class QuickTool : EditorWindow
                 o = ObjectFactory.CreateGameObject("object");
                 break;
             case "Player1":
-                Object fart = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/Player1.prefab", typeof(GameObject));
-                o = PrefabUtility.InstantiatePrefab(fart) as GameObject;
+                obj = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/Player1.prefab", typeof(GameObject));
+                o = PrefabUtility.InstantiatePrefab(obj) as GameObject;
                 break;
             case "Player2":
-                Object fart2 = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/Player2.prefab", typeof(GameObject));
-                o = PrefabUtility.InstantiatePrefab(fart2) as GameObject;
+                obj = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/Player2.prefab", typeof(GameObject));
+                o = PrefabUtility.InstantiatePrefab(obj) as GameObject;
+                break;
+            case "Floor":
+                obj = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/FLoor.prefab", typeof(GameObject));
+                o = PrefabUtility.InstantiatePrefab(obj) as GameObject;
+                break;
+            case "Teleporter":
+                obj = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/teleporter (1).prefab", typeof(GameObject));
+                o = PrefabUtility.InstantiatePrefab(obj) as GameObject;
+                break;
+            case "BlueGoal":
+                obj = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/BlueGoal.prefab", typeof(GameObject));
+                o = PrefabUtility.InstantiatePrefab(obj) as GameObject;
+                break;
+            case "RedGoal":
+                obj = AssetDatabase.LoadAssetAtPath("Assets/GameObjects/RedGoal.prefab", typeof(GameObject));
+                o = PrefabUtility.InstantiatePrefab(obj) as GameObject;
                 break;
             default:
                 o = ObjectFactory.CreatePrimitive(PrimitiveType.Cube);
