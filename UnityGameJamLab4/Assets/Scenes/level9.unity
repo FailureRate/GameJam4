@@ -243,6 +243,14 @@ PrefabInstance:
       propertyPath: pathNodes.Array.data[1].x
       value: -12
       objectReference: {fileID: 0}
+    - target: {fileID: 1310665291, guid: 752a4f09a0b3d5a4ab0472bc3008f768, type: 3}
+      propertyPath: speedVar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310665291, guid: 752a4f09a0b3d5a4ab0472bc3008f768, type: 3}
+      propertyPath: pathnode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 752a4f09a0b3d5a4ab0472bc3008f768, type: 3}
 --- !u!1001 &119225293
